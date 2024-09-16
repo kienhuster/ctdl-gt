@@ -1,2 +1,5 @@
 # ctdl-gt
-ctdl&amp;gt
+# include<iostream>
+int main(){
+cout<<"hello";
+}
