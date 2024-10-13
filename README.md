@@ -41,7 +41,7 @@ std::string mahoa2(int number) {
  
 
 int main(){
-    std::string color[]{"xanh", "do", "xanh", "do", "do", "trang", "do", "xanh", "trang"};
+    std::string color[]={"xanh", "do", "xanh", "do", "do", "trang", "do", "xanh", "trang"};
    
     int daymahoa[10];
     for(int i=0;i<9;i++ ){
