@@ -28,7 +28,7 @@ std::string mahoa2(int number) {
    
 
  void arrange(int n,int arr[]){
-    for (int i;i<n;i++){
+    for (int i=1;i<n;i++){
         int x = arr[i];
         int j=i;
         while( j>0 && arr[j-1]>x){
