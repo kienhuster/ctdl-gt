@@ -4,7 +4,7 @@ using namespace std;
 int  mahoa1(const std::string& color) {
     
     if (color == "do") {
-        return 0;  // "d?" du?c mã hóa thành 0
+        return 0;  // mã hóa đỏ thành 0
     }
     else if (color == "xanh") {
         return 1; 
@@ -17,9 +17,9 @@ int  mahoa1(const std::string& color) {
 std::string mahoa2(int number) {
     
       if (number == 0) {
-        return "do";   // 0 du?c gi?i mã thành "d?"
+        return "do";   // 0 mã hóa thành đỏ
     } else if (number == 1) {
-        return "trang"; } // 1 du?c gi?i mã thành "vàng"
+        return "trang"; } 
     else if (number == 2){ 
         return "xanh";}
     
