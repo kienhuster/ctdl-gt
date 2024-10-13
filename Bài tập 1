@@ -4,7 +4,7 @@ using namespace std;
 int  mahoa1(const std::string& color) {
     
     if (color == "do") {
-        return 0;  // mã hóa đỏ thành 0
+        return 0;  // mã hóa do thành 0
     }
     else if (color == "xanh") {
         return 1; 
@@ -17,11 +17,11 @@ int  mahoa1(const std::string& color) {
 std::string mahoa2(int number) {
     
       if (number == 0) {
-        return "do";   // 0 mã hóa thành đỏ
+        return "do";   // 0 mã hóa thành do
     } else if (number == 1) {
-        return "trang"; } 
+        return "xanh"; } 
     else if (number == 2){ 
-        return "xanh";}
+        return "trang";}
     
 }
         
@@ -40,24 +40,30 @@ std::string mahoa2(int number) {
  }
  
 
-int main(){
-    std::string color[]={"xanh", "do", "xanh", "do", "do", "trang", "do", "xanh", "trang"};
-   
-    int daymahoa[10];
-    for(int i=0;i<9;i++ ){
-        daymahoa[i]=mahoa1(color[i]);
+int main() {
+    int n;
+    cin >> n;
+    cout << "nhap vao do cac phan tu co mau do xanh trang : ";
+    string color[100];
+    for (int i = 0; i < n; i++) {
+        cin >> color[i];
     }
-    arrange(9,daymahoa);
-    
-    string daymau[10];
-     for(int i=0;i<9;i++ ){
-        daymau[i]=mahoa2(daymahoa[i]);
+    cout<<endl;
+    int daymahoa[100];
+    for (int i = 0; i < n; i++) {
+       daymahoa[i] = mahoa1(color[i]);
     }
-    for(int i=0;i<9;i++ ){
-       cout<< daymau[i]<<" ";
+    arrange(n, daymahoa);
+
+    string daymau[100];
+    for (int i = 0; i < n; i++) {
+        daymau[i] = mahoa2(daymahoa[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        cout << daymau[i] << " ";
     }
     return 0;
 
-}		
+}
+		
 	
-
