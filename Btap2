@@ -1,0 +1,94 @@
+/*Bài 2: Thiết kế giải thuật và cài đặt để tạo ra một mảng số nửa nguyên tố(Blum) nhỏ hơn một số N cho trước và thực hiện hai yêu cầu sau
+- Tìm ra tất cả các cặp số Blum có tổng cũng là một số Blum nhỏ hơn N
+- Kiểm tra xem một số Blum M có tồn tại trong dãy số Blum được tạo ra hay không.*/
+#include<iostream>
+using namespace std;
+int prime(int x) {
+
+	int c = 0;
+	if (x < 2) { return -1; }
+	else {
+		for (int i = 2; i < x - 1; i++) {
+
+			if (x % i == 0) {
+				c++;
+			}
+		}
+		if (c == 0) return x;
+		else return -1;
+	}
+
+}
+int main() {
+
+	int N;
+	
+	cout << "So cho truoc: ";
+	cin >>N;
+	
+	
+	int daynguyento[100];
+	int count1 = 0;
+	for (int i = 0; i < N; i++) {
+		int result = prime(i);
+		if (result != -1) {
+			daynguyento[count1] = result;
+			count1++;
+		}
+	}
+	cout << "Day nguyen to: ";
+	for (int i = 0; i < count1; i++) {
+		cout << daynguyento[i] << " ";
+	}
+	cout << endl;
+	cout << "Day blum: ";
+	int dayblum[100];
+	int count2 = 0;
+	for (int i = 0; i < count1; i++) {
+		for (int j = i + 1; j < count1; j++) {
+			
+			int result1 = daynguyento[i] * daynguyento[j];
+			if (result1 < N) {
+				dayblum[count2]=result1;
+					count2++;
+			}
+		}
+
+	}
+	for (int i = 0; i < count2; i++) {
+		cout << dayblum[i] << " ";
+	}
+	cout<<endl;
+	cout << "Day cap so blum nho hon so "<<N<<":";
+	int daycapblum[100];
+	int count3 = 0;
+	for (int i = 0; i < count2; i++) {
+		for (int j = i + 1; j < count2; j++) {
+
+			int result2 = dayblum[i] + dayblum[j];
+			if (result2 < N) {
+				daycapblum[count3] = result2;
+				count3++;
+			}
+		}
+
+	}
+	for (int i = 0; i < count3; i++) {
+		cout << daycapblum[i] << " ";
+	}
+	cout << endl;
+	int M;
+	int count4 = 0;
+	cout << "Hay nhap mot so bat ki: ";
+	cin >> M;
+	for (int i = 0; i < count2; i++) {
+		if (M != dayblum[i]) {
+			count4++;
+		}
+	}
+	if (count4 < count2) {
+		cout << "So do thuoc day.";
+	}
+	else { cout << "So do khong thuoc day."; }
+    return 0;
+}
