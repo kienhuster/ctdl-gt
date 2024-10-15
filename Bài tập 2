@@ -67,14 +67,10 @@ int main() {
 
 			int result2 = dayblum[i] + dayblum[j];
 			if (result2 < N) {
-				daycapblum[count3] = result2;
-				count3++;
+			   cout << "(" << dayblum[i] << "," << dayblum[j] << ")" << ";";
 			}
 		}
 
-	}
-	for (int i = 0; i < count3; i++) {
-		cout << daycapblum[i] << " ";
 	}
 	cout << endl;
 	int M;
