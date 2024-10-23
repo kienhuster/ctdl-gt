@@ -31,8 +31,8 @@ void danhsach(int n) {
 
 
 int main() {
-    nhapdanhsach(3);  
-    danhsach(3);
+    nhapdanhsach(50);  
+    danhsach(50);
     int min=0;
     int max=0;
     for(int j=1;j<3;j++){
