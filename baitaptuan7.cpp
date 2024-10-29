@@ -46,6 +46,6 @@ int main() {
         }
     }
     cout <<" nam co so nguoi it nhat: " << danSO.nam[min]<< endl;
-    cout<< " nam co so nguoi nhieu nhat: " << danSO.nam[max]<< endl;
+    cout<< " nam co so nguoi nhieu nhat: " << danSO.nam[max]<<endl;
     return 0;
 }
