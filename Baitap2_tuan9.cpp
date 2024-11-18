@@ -121,7 +121,7 @@ int main(){
     duyet_cau(&Tu);
     tim_tu_xuat_hien_nhieu_nhat(&Tu);
     loai_bo_tu(&Tu);
-    cout<<"Cau sau khi duoc loai bo tu lap: ";
+    cout<<"Cau sau khi duoc loai bo tu trung nhau lien tiep: ";
     duyet_cau(&Tu);
     cout<<"So tu vung trong cau: ";
     cout<< dem_so_tu_vung(&Tu);

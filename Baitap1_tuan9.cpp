@@ -7,6 +7,7 @@ Copy paste một file từ thư mục khác sang thư mục trên sao do file lu
 Thực hiện tính toán kích thước các file trong thư mục 
 Người ta muốn sao lưu các file trong thư mục trên vào một ổ USB có kích thước 32G. Hãy thực hiện loại bỏ dần nếu cần một số file có kích thước nhỏ nhất để có thể thực hiện được thao tác trên.  */
 #include<iostream>
+
 using namespace std;
 struct file_node{
     string file_name;
@@ -37,9 +38,12 @@ void addFile(List_file*file,string ten,int size, string time){
    file->head=newNode;
    cout<< "File: "<<ten<<" Date modfifate: "<<time<< " Size: "<<size<<endl;
 }
-
-
-
-
-
-
+int calculateTotalSize(List_file* list) {
+    int totalSize = 0;
+    file_node* current = list->head;
+    while (current != NULL) {
+        totalSize += current->fileSize;
+        current = current->next;
+    }
+    return totalSize;
+}
