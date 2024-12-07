@@ -73,7 +73,7 @@ Node* create_Cay() {
     return root;
 }
 
-// Hàm duyệt hậu tố (LRN)
+// Hàm duyệt hậu tố 
 void LRN(Node* node) {
     if (!empty(node)) {
         LRN(node->left);  // Duyệt nhánh trái

@@ -30,12 +30,12 @@ node_tu*tao_tu(string tuMoi){
 // Hàm tạo câu theo trình tự từ từ nhập trước sẽ ở vị trí trước từ nhập sau
 void tao_cau(Cau* Tu, string tuMoi) {
     node_tu* tu_moi = tao_tu(tuMoi);
-    node_tu* temp = Tu->head;
+    
     if (Tu->head == NULL) {
         Tu->head = tu_moi;
         return;
     }
-    
+    node_tu* temp = Tu->head;
     while (temp->next != NULL) {  // Dừng khi đến phần tử cuối cùng
         temp = temp->next;
     }
