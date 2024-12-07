@@ -37,9 +37,9 @@ Node* makenode(string value){
     return newnode;
 }
 
-// Hàm tạo cây biểu thức từ biểu thức chuỗi (cây toán tử)
+// Hàm tạo cây 
 Node* create_Cay() {
-    // Tạo cây biểu thức theo cấu trúc từ biểu thức: a * 5 - b * c^6 / d + (h - f) * e^1 / 2
+    // Tạo cây  theo cấu trúc từ biểu thức: a * 5 - b * c^6 / d + (h - f) * e^1 / 2
     Node* root = makenode("+");
 
     // Nhánh trái
@@ -84,28 +84,25 @@ void LRN(Node* node) {
 //Hàm duyệt trung tố
 void LNR(Node*node) {
     if (!empty(node)) {
-        LRN(node->left);  // Duyệt nhánh trái
+        LNR(node->left);  // Duyệt nhánh trái
         cout << node->data << " "; 
-        LRN(node->right); // Duyệt nhánh phải
+        LNR(node->right); // Duyệt nhánh phải
     }
 }
 //Hàm duyệt tiền tố
 void NLR(Node*node) {
     if (!empty(node)) {
-        LRN(node->left);  // Duyệt nhánh trái
-        LRN(node->right); // Duyệt nhánh phải
-        cout << node->data << " ";   
+       cout << node->data << " ";
+        NLR(node->left);  // Duyệt nhánh trái
+        NLR(node->right); // Duyệt nhánh phải
+           
     }
 }
 
 int main() {
     Cay tree;
-    cay(&tree); // Khởi tạo cây
-
-    // Tạo cây biểu thức
+    cay(&tree); 
     tree.head = create_Cay();
-
-    // In biểu thức theo dạng hậu tố
     cout << "Duyet hau to: ";
     LRN(tree.head);
     cout << endl;
