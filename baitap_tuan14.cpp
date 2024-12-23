@@ -10,8 +10,8 @@ using namespace std;
 
 struct Node{
     string data;
-    Node* right;
     Node* left;
+    Node* right;
 };
 
 struct Cay{
@@ -38,7 +38,7 @@ Node* makenode(string value){
 }
 
 // Hàm tạo cây 
-Node* create_Cay() {
+/*Node* create_Cay() {
     // Tạo cây  theo cấu trúc từ biểu thức: a * 5 - b * c^6 / d + (h - f) * e^1 / 2
     Node* root = makenode("+");
 
@@ -71,8 +71,15 @@ Node* create_Cay() {
     root->right = right1;
 
     return root;
+}*/
+// Thêm node vao cây
+void tao_cay(Cay*c,string value){
+  Node*newnode=makenode(value);
+  if(c->head==NULL){
+  c->head=newnode;
+  } while(1)
+ 
 }
-
 // Hàm duyệt hậu tố 
 void LRN(Node* node) {
     if (!empty(node)) {
