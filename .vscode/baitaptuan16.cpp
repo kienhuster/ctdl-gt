@@ -123,7 +123,7 @@ int test_balance(Node*t){
         add_node(head, arr[i]);
     }
 }
-    //Hàm in cây AVL
+    //Hàm in cây AVL  
    void output(Node* head) {
     if (head != NULL) {
         output(head->left);
